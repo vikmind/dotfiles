@@ -1,9 +1,12 @@
+#!/bin/sh
+{{ if eq .chezmoi.os "darwin" -}}
 # MacOS stuff
 alias repair_camera="sudo killall VDCAssistant"
 alias repair_bt="sudo kextunload -b com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport && sudo kextload -b com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport"
 alias show-hidden-files="defaults write com.apple.finder AppleShowAllFiles TRUE;killall Finder"
 alias hide-hidden-files="defaults write com.apple.finder AppleShowAllFiles FALSE;killall Finder"
 alias o='open'
+{{ end -}}
 
 # Rails
 _bundle_exec_rspec() {
@@ -11,7 +14,6 @@ _bundle_exec_rspec() {
 }
 alias ber='_bundle_exec_rspec'
 alias eber='APIPIE_RECORD=examples _bundle_exec_rspec'
-
 
 alias b64="openssl base64 -in"
 alias speedtest="curl -o /dev/null http://speedtest.sea01.softlayer.com/downloads/test100.zip"

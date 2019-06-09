@@ -1,0 +1,32 @@
+# Example aliases
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export EDITOR=/usr/local/bin/vim
+export VISUAL=/usr/local/bin/vim
+export PATH="/usr/local/sbin:$PATH"
+export PATH="$PATH:$HOME/.rvm/bin"
+export NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
+export PATH="/usr/local/lib/node_modules:$PATH"
+export JIRA_URL="https://yournetworks.atlassian.net"
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+export PATH="$PATH:`yarn global bin`"
+export PATH="$PATH:$HOME/.scripts/bin"
+export TERM=xterm-256color
+# rust
+export PATH="$HOME/.cargo/bin:$PATH"
+# dart
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+export PATH="$HOME/.fastlane/bin:$PATH"
+{{ if eq .chezmoi.os "linux" -}}
+export PATH="$PATH:$HOME/.var/flutter/bin"
+{{ else if eq .chezmoi.os "darwin" -}}
+export HOMEBREW_GITHUB_API_TOKEN={{ .homebrew_github_api_token }}
+export ANDROID_HOME=~/Library/Android/sdk
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+export PATH="$PATH:/Applications/LibreOffice.app/Contents/MacOS"
+export PATH="$PATH:{{ .chezmoi.homedir }}/Projects/flutter/bin"
+{{ end -}}
+# PFA cli
+export PFA_CLI_API_TOKEN={{ .pfa_cli_api_token }}
+export PFA_CLI_URL={{ .pfa_cli_url }}

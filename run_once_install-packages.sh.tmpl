@@ -1,0 +1,14 @@
+{{ if eq .chezmoi.os "linux" -}}
+#!/bin/sh
+sudo pacman -Sy ripgrep
+# https://aur.archlinux.org/antibody-bin.git
+{{ else if eq .chezmoi.os "darwin" -}}
+#!/bin/sh
+brew install ripgrep
+brew install getantibody/tap/antibody
+{{ end -}}
+
+
+# Setup zsh
+antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
+
