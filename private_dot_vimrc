@@ -61,20 +61,16 @@ NeoBundle 'Raimondi/delimitMate'
 " Must have
 NeoBundle 'scrooloose/nerdtree'
 
-" ALE
-" NeoBundle 'w0rp/ale'
-
 " Autcompletetion
 NeoBundle 'neoclide/coc.nvim', {'do': './install.sh nightly'}
-
-" SuperTab
-" NeoBundle 'ervandew/supertab'
 
 " Add smart commands for comments like:
 " gcc - Toggle comment for the current line
 " gc  - Toggle comments for selected region or number of strings
 " Very usefull
 NeoBundle 'tomtom/tcomment_vim'
+
+" Indent object 'i'
 NeoBundle 'michaeljsmith/vim-indent-object'
 
 " Git gutter
@@ -119,42 +115,23 @@ NeoBundle 'jelera/vim-javascript-syntax'
 " Add Support css3 property
 NeoBundle 'hail2u/vim-css3-syntax'
 
-" Syntax highlighting for Stylus
-" NeoBundle 'wavded/vim-stylus'
-
-" Add support for taltoad/vim-jadeumarkdown
-" NeoBundle 'tpope/vim-markdown'
-
-" Vue FTW!
+" Vue
 " NeoBundle 'posva/vim-vue'
 
 " CSS colors
 NeoBundle 'ap/vim-css-color'
 
 " Highlights the matching HTML tag when the cursor
-" is positioned on a tag.
+" is positioned on a tag. Works horribly with vue
 " NeoBundle 'gregsexton/MatchTag'
 
 " Automatically add closing tags in html-like formats
 NeoBundle 'alvan/vim-closetag'
-
-" Smart indent for javascript
-" http://www.vim.org/scripts/script.php?script_id=3081
-" NeoBundle 'lukaszb/vim-web-indent'
-
-" Plugin for changing cursor when entering in insert mode
-" looks like it works fine with iTerm Konsole adn xerm
-" Applies only on next vim launch after NeoBundleInstall
-NeoBundle 'jszakmeister/vim-togglecursor'
-
-" NeoBundle 'mattn/emmet-vim'
+NeoBundle 'mattn/emmet-vim'
 
 " Nice statusline/ruler for vim
 NeoBundle 'vim-airline/vim-airline'
 NeoBundle 'vim-airline/vim-airline-themes'
-
-"code-completion for jquery, lodash e.t.c
-NeoBundle 'othree/javascript-libraries-syntax.vim'
 
 " editorconfig
 NeoBundle 'editorconfig/editorconfig-vim'
@@ -168,7 +145,6 @@ syntax on
 
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
-
 " disable annoying prompt on initial bundle install
 set nomore
 
@@ -202,26 +178,6 @@ nmap <silent> <leader>f :NERDTreeFind<CR>
 nmap <silent> <leader>n :NERDTreeToggle<CR>
 
 "-------------------------
-" Fugitive
-
-" " Blame on current line
-" nmap <silent> <leader>b :.Gblame<cr>
-" " Blame on all selected lines in visual mode
-" vmap <silent> <leader>b :Gblame<cr>
-" " Git status
-" nmap <silent> <leader>gst :Gstatus<cr>
-" " like git add
-" nmap <silent> <leader>gw :Gwrite<cr>
-" " git diff
-" nmap <silent> <leader>gd :Gdiff<cr>
-" " git commit
-" nmap <silent> <leader>gc :Gcommit<cr>
-" " git commit all
-" nmap <silent> <leader>gca :Gcommit -a<cr>
-" " git fixup previous commit
-" nmap <silent> <leader>gcf :Gcommit -a --amend<cr>
-
-"-------------------------
 " DelimitMate
 
 " Delimitmate place cursor correctly n multiline objects e.g.
@@ -242,11 +198,6 @@ let loaded_delimitMate = 1
 " Enable for files with this extensions
 let g:closetag_filenames = "*.handlebars,*.html,*.xhtml,*.phtml,*.vue"
 
-
-"-------------------------
-" vim-supertab
-"
-let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
 
 "-------------------------
 " vim-airline
@@ -292,18 +243,6 @@ command! -bang -nargs=? -complete=dir GFiles
   \ call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview(), <bang>0)
 
 "--------------------------------------------------
-" ALE
-
-" let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_delay = 500
-let g:ale_linter_aliases = {'vue': ['vue', 'javascript']}
-let g:ale_linters = {'vue': ['vls'], 'ruby': ['ruby']}
-let g:ale_completion_enabled = 0
-let g:ale_completion_max_suggestions = 10
-set signcolumn=yes
-set completeopt=menu,menuone,preview,noselect,noinsert
-
-"--------------------------------------------------
 " Colorscheme
 
 " If you have vim >=8.0 or Neovim >= 0.1.5
@@ -322,11 +261,9 @@ highlight ColorColumn ctermbg=0x123249
 " highlight NonText ctermfg=59 ctermbg=0 cterm=NONE guifg=#414e58 guibg=#232c31 gui=NONE
 highlight Normal ctermfg=grey ctermbg=60
 set t_ut=
+
 "--------------------------------------------------
 " General options
-
-" Enable per-directory .vimrc files and disable unsafe commands in them
-"set exrc secure
 
 " Set up leader key <leader>, i use default \
 " let mapleader = ','
@@ -336,9 +273,6 @@ set t_ut=
 
 " Auto reload changed files
 set autoread
-
-" Always change current dirrectory to current-editing-file dir
-"set autochdir
 
 " Indicates fast terminal connection
 set ttyfast
@@ -382,14 +316,6 @@ set listchars=tab:⇥\ ,trail:·,extends:⋯,precedes:⋯,nbsp:~
 " Useless with nowrap
 set linebreak
 
-" Numbers of line to scroll when the cursor get off the screen
-" Useless with scrolloff
-" set scrolljump=5
-
-" Numbers of columns to scroll when the cursor get off the screen
-" Useless with sidescrollof
-" set sidescroll=4
-
 " Numbers of rows to keep to the left and to the right off the screen
 set scrolloff=10
 
@@ -407,14 +333,6 @@ set showcmd
 " Indicate that last window have a statusline too
 set laststatus=2
 
-" Add a line / column display in the bottom right-hand section of the screen.
-" Not needed with airline plugin
-"set ruler
-
-" Setting up right-hand section(ruller) format
-" Not needed with airline plugin
-"set rulerformat=%30(%=\:%y%m%r%w\ %l,%c%V\ %P%)
-
 " The cursor should stay where you leave it, instead of moving to the first non
 " blank of the line
 set nostartofline
@@ -429,7 +347,7 @@ set number
 " set cursorline
 
 " maximum text length at 80 symbols, vim automatically breaks longer lines
-" set textwidth=80
+set textwidth=120
 
 " higlight column right after max textwidth
 set colorcolumn=+1
@@ -498,7 +416,6 @@ set matchpairs+=<:>
 
 " Extended autocmpletion for commands
 set wildmenu
-
 " Autocmpletion hotkey
 set wildcharm=<TAB>
 
@@ -507,11 +424,9 @@ set wildcharm=<TAB>
 
 " Enable syntax folding in javascript
 let javaScript_fold=1
-
 " No fold closed at open file
 set foldlevelstart=99
 set nofoldenable
-
 " Keymap to toggle folds with space
 nmap <space> za
 
@@ -546,10 +461,8 @@ set noeol
 
 " Display filler
 set diffopt=filler
-
 " Open diff in horizontal buffer
 set diffopt+=horizontal
-
 " Ignore changes in whitespaces characters
 set diffopt+=iwhite
 
@@ -626,7 +539,3 @@ if has("autocmd")
 
 endif
 
-" Make better macvim
-if has('gui_running')
-  set guifont=Monaco:h12
-endif
