@@ -1,0 +1,7 @@
+{
+  "cwd": "/Users/vikmind/Projects/kroogi/paper",
+  "cmd": "npm run start_sw",
+  "env": {
+    "PATH": "/Users/vikmind/.rvm/gems/ruby-2.3.0/bin:/Users/vikmind/.rvm/gems/ruby-2.3.0@global/bin:/Users/vikmind/.rvm/rubies/ruby-2.3.0/bin:/usr/local/lib/node_modules:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/vikmind/.rvm/bin:/Applications/Postgres.app/Contents/Versions/latest/bin:/Users/vikmind/Library/Android/sdk/tools:/Users/vikmind/Library/Android/sdk/platform-tools:/usr/local/bin"
+  }
+}
