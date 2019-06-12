@@ -6,6 +6,7 @@ alias repair_bt="sudo kextunload -b com.apple.iokit.BroadcomBluetoothHostControl
 alias show-hidden-files="defaults write com.apple.finder AppleShowAllFiles TRUE;killall Finder"
 alias hide-hidden-files="defaults write com.apple.finder AppleShowAllFiles FALSE;killall Finder"
 alias o='open'
+alias canary='open -a "Google Chrome Canary" --args --proxy-pac-url=http://localhost:2000/proxy.pac'
 {{ end -}}
 
 # Rails
