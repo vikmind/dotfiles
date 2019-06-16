@@ -1,3 +1,6 @@
+{{ if eq .chezmoi.os "linux" -}}
+# Write with libnotify
+{{ else if eq .chezmoi.os "darwin" -}}
 #!/usr/bin/osascript
 
 on run argv
@@ -9,3 +12,5 @@ on run argv
         return "<message> is required\nUsage: notify <message> [<title>]"
     end if
 end run
+{{ end -}}
+

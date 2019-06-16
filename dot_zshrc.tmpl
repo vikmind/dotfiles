@@ -59,3 +59,7 @@ source $HOME/.rvm/scripts/rvm
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 . /usr/local/etc/profile.d/z.sh
 
+{{ if eq .chezmoi.os "linux" -}}
+source /usr/share/nvm/init-nvm.sh
+{{ else if eq .chezmoi.os "darwin" -}}
+{{ end -}}

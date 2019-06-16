@@ -2,6 +2,7 @@
 #!/bin/sh
 sudo pacman -Sy ripgrep
 # https://aur.archlinux.org/antibody-bin.git
+# install nvm
 {{ else if eq .chezmoi.os "darwin" -}}
 #!/bin/sh
 brew install ripgrep
@@ -12,3 +13,6 @@ brew install getantibody/tap/antibody
 # Setup zsh
 antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
 
+# install z
+mkdir ~/.scripts
+git clone git@github.com:/rupa/z.git ~/.scripts/z

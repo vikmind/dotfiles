@@ -7,11 +7,13 @@ alias show-hidden-files="defaults write com.apple.finder AppleShowAllFiles TRUE;
 alias hide-hidden-files="defaults write com.apple.finder AppleShowAllFiles FALSE;killall Finder"
 alias o='open'
 alias canary='open -a "Google Chrome Canary" --args --proxy-pac-url=http://localhost:2000/proxy.pac'
+alias pgadmin='/Applications/pgAdmin\ 4.app/Contents/MacOS/pgAdmin4'
+alias pgadmin_stop='killall pgAdmin4'
 {{ end -}}
 
 # Rails
 _bundle_exec_rspec() {
-  bin/rails db:migrate RAILS_ENV=test && bundle exec rspec $1 && osx-notify 'SPEC completed'
+  bin/rails db:migrate RAILS_ENV=test && bundle exec rspec $1 && notify 'SPEC completed'
 }
 alias ber='_bundle_exec_rspec'
 alias eber='APIPIE_RECORD=examples _bundle_exec_rspec'
@@ -22,8 +24,6 @@ alias webserver="python -m SimpleHTTPServer"
 alias bs_server="browser-sync start --files=\"*\" --server --port 3331"
 alias docker-env='eval \"$(docker-machine env default)\"'
 alias youtube-dl-mp3='youtube-dl -citx --audio-format mp3'
-alias pgadmin='/Applications/pgAdmin\ 4.app/Contents/MacOS/pgAdmin4'
-alias pgadmin_stop='killall pgAdmin4'
 alias tmux="tmux -2"
 alias vi="vim"
 alias qr="qrip"
