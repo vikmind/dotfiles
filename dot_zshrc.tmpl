@@ -57,7 +57,7 @@ source $HOME/.scripts/variables.sh
 source $HOME/.scripts/aliases.sh
 source $HOME/.rvm/scripts/rvm
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-. /usr/local/etc/profile.d/z.sh
+. ~/.scripts/z/z.sh
 
 {{ if eq .chezmoi.os "linux" -}}
 source /usr/share/nvm/init-nvm.sh
