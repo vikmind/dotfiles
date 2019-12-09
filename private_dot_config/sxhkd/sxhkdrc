@@ -1,0 +1,24 @@
+XF86AudioMute
+  pulsemixer --toggle-mute
+
+XF86AudioLowerVolume
+  pulsemixer --change-volume -5
+
+XF86AudioRaiseVolume
+  pulsemixer --change-volume +5
+
+XF86AudioNext
+  MellowPlayer -f
+
+XF86AudioPlay
+  MellowPlayer -p
+
+XF86AudioPrev
+  MellowPlayer -b
+
+XF86MonBrightnessDown
+  xbacklight -dec 15
+
+XF86MonBrightnessUp
+  xbacklight -inc 15
+

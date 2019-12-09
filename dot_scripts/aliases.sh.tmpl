@@ -1,12 +1,19 @@
 #!/bin/sh
-{{ if eq .chezmoi.os "darwin" -}}
+{{ if eq .chezmoi.os "linux" -}}
+alias chromedev='chromium --args --proxy-pac-url=http://localhost:2000/proxy.pac'
+_open_for_linux() {
+  xdg-open $1 & disown
+}
+alias o='_open_for_linux'
+alias pbcopy='xsel --clipboard'
+{{ else if eq .chezmoi.os "darwin" -}}
 # MacOS stuff
 alias repair_camera="sudo killall VDCAssistant"
 alias repair_bt="sudo kextunload -b com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport && sudo kextload -b com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport"
 alias show-hidden-files="defaults write com.apple.finder AppleShowAllFiles TRUE;killall Finder"
 alias hide-hidden-files="defaults write com.apple.finder AppleShowAllFiles FALSE;killall Finder"
 alias o='open'
-alias canary='open -a "Google Chrome Canary" --args --proxy-pac-url=http://localhost:2000/proxy.pac'
+alias chromedev='open -a "Google Chrome Canary" --args --proxy-pac-url=http://localhost:2000/proxy.pac'
 alias pgadmin='/Applications/pgAdmin\ 4.app/Contents/MacOS/pgAdmin4'
 alias pgadmin_stop='killall pgAdmin4'
 {{ end -}}
