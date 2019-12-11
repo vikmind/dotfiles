@@ -1,11 +1,14 @@
-#!/bin/sh
+#!/bin/zsh
 {{ if eq .chezmoi.os "linux" -}}
 alias chromedev='chromium --args --proxy-pac-url=http://localhost:2000/proxy.pac'
 _open_for_linux() {
-  xdg-open $1 & disown
+  xdg-open $1 &!
 }
 alias o='_open_for_linux'
 alias pbcopy='xsel --clipboard'
+alias xa='xrandr --auto'
+alias xdesk='xrandr --auto && xrandr --output LVDS1 --off'
+alias xlap='xrandr --auto && xrandr --output HDMI1 --off'
 {{ else if eq .chezmoi.os "darwin" -}}
 # MacOS stuff
 alias repair_camera="sudo killall VDCAssistant"
