@@ -7,7 +7,7 @@
 
 " Turn off filetype plugins before bundles init
 filetype off
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 " Auto installing NeoNeoBundle
 let isNpmInstalled = executable("npm")
@@ -232,6 +232,10 @@ command! -bang -nargs=? -complete=dir Files
 " Likewise, GFiles command with preview window
 command! -bang -nargs=? -complete=dir GFiles
   \ call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview(), <bang>0)
+
+"--------------------------------------------------
+" vim-dart
+let g:dart_format_on_save = 1
 
 "--------------------------------------------------
 " Colorscheme
