@@ -1,18 +1,3 @@
 {
-  "properties": {
-     "suggest": {
-       "lowPrioritySourceLimit": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 10,
-          "description": "Max items count for source priority lower than 90."
-        },
-        "highPrioritySourceLimit": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 10,
-          "description": "Max items count for source priority bigger than or equal to 90."
-        }
-     }
-  }
+  "coc.preferences.colorSupport": true
 }

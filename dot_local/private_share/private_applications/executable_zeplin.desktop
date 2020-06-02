@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Zeplin
+Icon=/home/vikmind/packages/zeplin-desktop-linux-x64/icon.png
+Exec="/home/vikmind/packages/zeplin-desktop-linux-x64/zeplin-desktop"
+Comment=Zeplin on Electron
+Terminal=false
+# StartupWMClass=jetbrains-studio

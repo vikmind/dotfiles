@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Chromium DEV
+Exec=chromium --args --proxy-pac-url=http://localhost:2000/proxy.pac
+# Exec=chromium --args --proxy-pac-url=http://localhost:2000/proxy.pac --disable-bundled-ppapi-flash
+Icon=/home/vikmind/packages/chrome_icon.png

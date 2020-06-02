@@ -66,6 +66,9 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+# split in stack
+bindsym $mod+Shift+s split v; layout stacking
+
 # split in horizontal orientation
 bindsym $mod+Shift+v split h
 
@@ -174,3 +177,9 @@ bar {
 new_window 1pixel
 title_align center
 hide_edge_borders smart
+
+exec --no-startup-id nohup sxhkd & disown
+exec --no-startup-id nohup picom & disown
+exec --no-startup-id hsetroot -solid '#123249'
+exec --no-startup-id nohup xfce4-clipman & disown
+exec --no-startup-id nohup ulauncher & disown

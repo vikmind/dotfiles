@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Todoist
+Icon=/home/vikmind/packages/todoist-desktop-linux-x64/icon.png
+Exec="/home/vikmind/packages/todoist-desktop-linux-x64/todoist-desktop"
+Comment=Todoist on Electron
+Terminal=false
+# StartupWMClass=jetbrains-studio

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=MacOS
+Icon=/home/vikmind/packages/OSX-KVM/icon.png
+Exec="/home/vikmind/packages/OSX-KVM/boot-macOS-Catalina.sh"
+Comment=MacOS Catalina
+Terminal=false
+# StartupWMClass=jetbrains-studio
