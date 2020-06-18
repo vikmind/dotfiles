@@ -1,0 +1,9 @@
+{
+  "cwd": "/home/vikmind/projects/example",
+  "cmd": "bin/rails server -p $PORT",
+  "env": {
+    "PATH": "echo $PATH | pbcopy",
+    "GEM_PATH": "echo $GET_PATH | pbcopy",
+    "GEM_HOME": "echo $GEM_HOME | pbcopy"
+  }
+}

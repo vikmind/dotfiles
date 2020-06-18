@@ -1,55 +1,57 @@
 # Vikmind's dotfiles
 
-## Installation process
+Currently I am using this config on three machines:
+
+- Manjaro desktop (XFCE edition originally)
+- X230 Thinkpad with Arch
+- 2012 MBP
+
+## Setup
 
 1. Install git and setup ssh
 1. Install ``chezmoi``
 1. ``git clone git@github.com:/vikmind/dotfiles.git``
-1. ``chezmoit init && chezmoi cd && chezmoi apply``
+1. ``chezmoi init && chezmoi cd && chezmoi apply``
 
-## ``chezmoi.toml`` template
+### ``~/.config/chezmoi/chezmoi.toml`` template
 
-```
+```toml
 [data]
-homebrew_github_api_token = "Homebrew token"
-pfa_cli_api_token = "PFA cli token"
-pfa_cli_url = "PFA cli url"
+homebrew_github_api_token = "Homebrew token for MacOS"
 ```
 
-## Arch configuration adventures
+## Arch Linux configuration
 
-Installation by the [Arch wiki guide](https://wiki.archlinux.org/index.php/Installation_guide).
-``/home`` is located on separated partition with [dm-crypt](https://wiki.archlinux.org/index.php/Dm-crypt) encryption.
+Arch was installed using the [Arch wiki guide](https://wiki.archlinux.org/index.php/Installation_guide).
+``/home`` is located on separated partition with
+[dm-crypt](https://wiki.archlinux.org/index.php/Dm-crypt) encryption.
 
 ### Base packages
 
 Install [``yay``](https://www.ostechnix.com/yay-found-yet-another-reliable-aur-helper/)
-```
+
+```shell
 yay -S vim
 ```
 
-### Xorg and i3
-
-```
+```shell
 yay -s xorg xorg-server xorg-init i3-wm i3status
 ```
 
-### Other packages
-```
+```shell
 yay -S openssh openssl antibody zsh chezmoi enpass-bin fzf ripgrep bat tmux yarn
 ```
 
-### Device specific, see [Thinkpad recommendation](https://wiki.archlinux.org/index.php/Lenovo_ThinkPad_X230):
+### [Thinkpad recommendations](https://wiki.archlinux.org/index.php/Lenovo_ThinkPad_X230):
 
 - Screen
-- TLP
+- TLP for battery management
 - [Fingerprint GUI](https://wiki.archlinux.org/index.php/Fingerprint_GUI) Command for starting polkit manager ``sudo
   /usr/lib/fingerprint-gui/fingerprint-polkit-agent -d``
 
+## .vimrc brief description
 
-### vimrc notes
-
-Essential plugins:
+Main plugins:
 
 - ``Raimondi/delimitMate`` For auto-closing and positioning of cursor inside brackets
 - ``tomtom/tcomment_vim`` Commenting
@@ -57,13 +59,13 @@ Essential plugins:
 - ``scrooloose/nerdtree`` Nice file browser
 - ``junegunn/fzf`` fzf and ripgrep search tools integration: fuzzy search by filename or text inside files
 - ``airblade/vim-gitgutter`` Mark git status of individual lines
-- ``w0rp/ale`` Autocmplete and linting engine
+- ``neoclide/coc.nvim`` Autocmplete and linting engine
 - ``vim-airline/vim-airline`` Status line
 - ``editorconfig/editorconfig-vim`` https://editorconfig.org
 
 Language specific:
 
-```
+```vimscript
 'kana/vim-textobj-user'
 'nelstrom/vim-textobj-rubyblock'
 'vim-ruby/vim-ruby'
