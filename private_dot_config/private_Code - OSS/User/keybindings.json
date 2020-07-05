@@ -1,0 +1,8 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "command": "vscode-neovim.escape",
+    "key": "CapsLock",
+    "when": "neovim.mode == insert || neovim.mode == visual",
+  } 
+]

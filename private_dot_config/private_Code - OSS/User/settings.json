@@ -1,0 +1,24 @@
+{
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "python.jediEnabled": false,
+    "workbench.colorTheme": "Cobalt2",
+    "editor.fontFamily": "'Hack', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.tabSize": 2,
+    "vim.useSystemClipboard": true,
+    "vscode-neovim.neovimPath": "/usr/bin/nvim",
+    "solargraph.commandPath": "/home/vikmind/.rvm/gems/ruby-2.6.3/bin/solargraph",
+    "editor.cursorBlinking": "solid",
+    "zenMode.fullScreen": false,
+    "zenMode.hideLineNumbers": false,
+    "zenMode.hideTabs": false,
+    "zenMode.centerLayout": false,
+    "window.menuBarVisibility": "toggle",
+    "editor.renderWhitespace": "boundary",
+    "cSpell.enabled": true,
+    "cSpell.userWords": [
+        "cupertino"
+    ],
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.over": "line"
+}
