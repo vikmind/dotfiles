@@ -8,13 +8,13 @@ XF86AudioRaiseVolume
   pulsemixer --change-volume +5
 
 XF86AudioNext
-  MellowPlayer -f
+  dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
 
 XF86AudioPlay
-  MellowPlayer -p
+  dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 
 XF86AudioPrev
-  MellowPlayer -b
+  dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
 
 XF86MonBrightnessDown
   xbacklight -dec 15
