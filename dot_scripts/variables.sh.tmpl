@@ -21,7 +21,6 @@ export PATH="$HOME/.fastlane/bin:$PATH"
 {{ if eq .chezmoi.os "linux" -}}
 export PATH="$PATH:$HOME/.var/flutter/bin"
 {{ else if eq .chezmoi.os "darwin" -}}
-export HOMEBREW_GITHUB_API_TOKEN={{ .homebrew_github_api_token }}
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 export PATH="$PATH:/Applications/LibreOffice.app/Contents/MacOS"
