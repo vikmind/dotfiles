@@ -1,4 +1,5 @@
 # Oh my zsh
+# antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
 robbyrussell/oh-my-zsh
 robbyrussell/oh-my-zsh path:plugins/git
 robbyrussell/oh-my-zsh path:plugins/compleat
